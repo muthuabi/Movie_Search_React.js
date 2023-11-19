@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Display from './Displays.js';
 import reportWebVitals from './reportWebVitals';
-
+import ImageSwiper from './ImageSwiper';
+import MovieList from './MovieBase.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MovieList/>
   </React.StrictMode>
 );
 
