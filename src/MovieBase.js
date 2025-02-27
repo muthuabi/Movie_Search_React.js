@@ -41,8 +41,9 @@ class MovieList extends Component {
      } 
     componentDidMount=()=>{
         // fetch("http://universities.hipolabs.com/search?country=India")
-        //fetch("https://gist.github.com/saniyusuf/406b843afdfb9c6")
-         fetch("http://localhost/temp/Film.php")
+        // fetch("https://gist.github.com/saniyusuf/406b843afdfb9c6")
+         fetch("http://localhost:5000/movie-data",{method:'POST'})
+        // fetch("http://localhost/temp/Film.php")
         .then(res=>res.json())
         .then((res)=>
         {
@@ -81,13 +82,7 @@ class MovieList extends Component {
     render() { 
         window.onscroll=this.handleScroll
         return (
-            // <div>
-            //     {
-            //         this.state.movie.map(element=>(
-            //            <h1>{element.name}</h1>
-            //         ))
-            //     }
-            // </div>
+
             <div id="main" className='container p-3' >
 
             <AnchorLink href="#main" id="toplink" style={{position:"fixed",right:0,bottom:20,textDecoration:"none",fontSize:"xx-large",borderRadius:40,width:40,height:40,backgroundColor:"black",textAlign:"center",opacity:this.state.toplink, transition:"opacity 1s"}}>^</AnchorLink>
@@ -96,7 +91,7 @@ class MovieList extends Component {
             <h2 className='text-white text-center text-uppercase text-bg-dark p-2 position-relative' >Movie Details<button className='btn bt-dark btn-outline-light  mx-3 mx-lg-5 my-md-1 p-1 position-absolute' onClick={(e)=>this.ondis(e)} ><FaSearch size={20} ></FaSearch></button></h2>
             <div className='form-group w-md-100 gap-2 justify-content-center' style={{display:this.state.dis}}>
                 <input type="search" placeholder='Search Here...' onKeyDown={(e)=>this.keyhandle(e)} onChange={(e)=>this.onchange(e)} className='form-control w-50' id="input-search"/>
-                <button class="btn btn-outline-dark" id="search-btn"  onClick={(e)=>this.onclick(e)}  >Search</button>
+                <button className="btn btn-outline-dark" id="search-btn"  onClick={(e)=>this.onclick(e)}  >Search</button>
             </div>
             </div>
                 <div className='row d-flex gap-3' >
